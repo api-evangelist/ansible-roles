@@ -1,4 +1,4 @@
-name: Ansible Roles API
+name: Ansible Roles
 description: APIs for managing and discovering Ansible Roles from Ansible Galaxy
 image: https://ansible.com/images/ansible-logo.png
 created: 2024-01-01 00:00:00+00:00
