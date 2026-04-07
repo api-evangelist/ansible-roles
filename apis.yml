@@ -82,14 +82,13 @@ apis:
       - name: Get Collection Version
         description: Get specific version details of a collection
         method: GET
-        path: 
-          /plugin/ansible/content/published/collections/index/{namespace}/{name}/versions/{version}/
+        path: /plugin/ansible/content/published/collections/index/{namespace}/{name}/versions/{version}/
 tags:
-  - automation
-  - configuration-management
-  - devops
-  - ansible
-  - infrastructure-as-code
+  - Ansible
+  - Automation
+  - Configuration-Management
+  - Devops
+  - Infrastructure-As-Code
 maintainers:
   - name: Ansible Team
     email: info@ansible.com
