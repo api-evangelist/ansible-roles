@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ansible-roles/refs/heads/main/json-structure/ansible-roles-collection-structure.json",
+  "description": "An Ansible collection \u2014 a distributable package containing roles, modules, plugins, and documentation.",
+  "type": "object",
+  "properties": {
+    "namespace": {
+      "type": "string",
+      "description": "The Galaxy namespace for this collection.",
+      "example": "community"
+    },
+    "name": {
+      "type": "string",
+      "description": "The collection name.",
+      "example": "general"
+    },
+    "version": {
+      "type": "string",
+      "description": "The current latest version of the collection.",
+      "example": "8.6.0"
+    },
+    "description": {
+      "type": "string",
+      "description": "Short description of what the collection provides.",
+      "example": "A collection of general-purpose Ansible modules and roles."
+    },
+    "download_count": {
+      "type": "int32",
+      "description": "Total download count for this collection.",
+      "example": 5000000
+    },
+    "certified": {
+      "type": "boolean",
+      "description": "Whether this collection is Red Hat certified.",
+      "example": false
+    },
+    "license": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of SPDX license identifiers.",
+      "example": [
+        "GPL-3.0-or-later"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags categorizing the collection content.",
+      "example": [
+        "networking",
+        "cloud",
+        "linux"
+      ]
+    },
+    "requires_ansible": {
+      "type": "string",
+      "description": "Minimum Ansible version required.",
+      "example": ">=2.14.0"
+    },
+    "repository": {
+      "type": "uri",
+      "description": "Source code repository URL.",
+      "example": "https://github.com/ansible-collections/community.general"
+    },
+    "documentation": {
+      "type": "uri",
+      "description": "Link to collection documentation.",
+      "example": "https://docs.ansible.com/ansible/latest/collections/community/general/"
+    },
+    "created_at": {
+      "type": "datetime",
+      "description": "When this collection was first published.",
+      "example": "2020-01-01T00:00:00Z"
+    },
+    "updated_at": {
+      "type": "datetime",
+      "description": "When this collection was last updated.",
+      "example": "2026-04-01T00:00:00Z"
+    }
+  },
+  "required": [
+    "namespace",
+    "name",
+    "version"
+  ],
+  "name": "Collection"
+}

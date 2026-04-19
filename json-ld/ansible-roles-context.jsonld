@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "galaxy": "https://api-evangelist.github.io/ansible-roles/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Role": "galaxy:Role",
+    "Collection": "galaxy:Collection",
+    "id": {"@id": "dcterms:identifier", "@type": "xsd:integer"},
+    "name": "schema:name",
+    "description": "schema:description",
+    "namespace": {"@id": "galaxy:namespace", "@type": "xsd:string"},
+    "githubUser": {"@id": "galaxy:github_user", "@type": "xsd:string"},
+    "githubRepo": {"@id": "galaxy:github_repo", "@type": "xsd:string"},
+    "downloadCount": {"@id": "galaxy:download_count", "@type": "xsd:integer"},
+    "stargazersCount": {"@id": "galaxy:stargazers_count", "@type": "xsd:integer"},
+    "license": {"@id": "dcterms:license", "@type": "xsd:string"},
+    "version": {"@id": "schema:version", "@type": "xsd:string"},
+    "repository": {"@id": "schema:codeRepository", "@type": "@id"},
+    "documentation": {"@id": "schema:url", "@type": "@id"},
+    "certified": {"@id": "galaxy:certified", "@type": "xsd:boolean"},
+    "tags": {"@id": "galaxy:tags", "@container": "@set", "@type": "xsd:string"},
+    "created": {"@id": "schema:dateCreated", "@type": "xsd:dateTime"},
+    "modified": {"@id": "schema:dateModified", "@type": "xsd:dateTime"},
+    "createdAt": {"@id": "schema:dateCreated", "@type": "xsd:dateTime"},
+    "updatedAt": {"@id": "schema:dateModified", "@type": "xsd:dateTime"}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "namespace": "community",
+  "name": "general",
+  "version": "8.6.0",
+  "description": "A collection of general-purpose Ansible modules and roles.",
+  "download_count": 5000000,
+  "certified": false,
+  "license": ["GPL-3.0-or-later"],
+  "tags": ["networking", "cloud", "linux"],
+  "requires_ansible": ">=2.14.0",
+  "repository": "https://github.com/ansible-collections/community.general",
+  "documentation": "https://docs.ansible.com/ansible/latest/collections/community/general/",
+  "created_at": "2020-01-01T00:00:00Z",
+  "updated_at": "2026-04-01T00:00:00Z"
+}

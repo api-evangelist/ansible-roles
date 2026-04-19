@@ -1,0 +1,17 @@
+{
+  "id": 500123,
+  "name": "nginx",
+  "namespace": "geerlingguy",
+  "description": "Installs and configures Nginx web server.",
+  "github_user": "geerlingguy",
+  "github_repo": "ansible-role-nginx",
+  "github_branch": "master",
+  "download_count": 1250000,
+  "stargazers_count": 1800,
+  "forks_count": 750,
+  "open_issues_count": 12,
+  "min_ansible_version": "2.8",
+  "license": "MIT",
+  "created": "2015-01-01T00:00:00Z",
+  "modified": "2026-04-01T00:00:00Z"
+}

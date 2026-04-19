@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ansible-roles/refs/heads/main/json-schema/ansible-roles-role-schema.json",
+  "title": "Role",
+  "description": "An Ansible role published on Galaxy, containing tasks, handlers, defaults, templates, and metadata for reuse across playbooks.",
+  "type": "object",
+  "properties": {
+    "id": {"type": "integer", "description": "Unique numeric identifier for the role.", "example": 500123},
+    "name": {"type": "string", "description": "Name of the role.", "example": "nginx"},
+    "namespace": {"type": "string", "description": "Galaxy namespace (usually GitHub username) of the role author.", "example": "geerlingguy"},
+    "description": {"type": "string", "description": "Short description of what the role does.", "example": "Installs and configures Nginx web server."},
+    "github_user": {"type": "string", "description": "GitHub username of the role author.", "example": "geerlingguy"},
+    "github_repo": {"type": "string", "description": "GitHub repository name for this role.", "example": "ansible-role-nginx"},
+    "github_branch": {"type": "string", "description": "Default branch for this role's repository.", "example": "master"},
+    "download_count": {"type": "integer", "description": "Total number of times this role has been downloaded.", "example": 1250000},
+    "stargazers_count": {"type": "integer", "description": "Number of GitHub stars for this role.", "example": 1800},
+    "forks_count": {"type": "integer", "description": "Number of GitHub forks for this role.", "example": 750},
+    "open_issues_count": {"type": "integer", "description": "Number of open GitHub issues for this role.", "example": 12},
+    "min_ansible_version": {"type": "string", "description": "Minimum Ansible version required by this role.", "example": "2.8"},
+    "license": {"type": "string", "description": "Software license for this role.", "example": "MIT"},
+    "created": {"type": "string", "format": "date-time", "description": "When this role was first published to Galaxy.", "example": "2015-01-01T00:00:00Z"},
+    "modified": {"type": "string", "format": "date-time", "description": "When this role was last updated.", "example": "2026-04-01T00:00:00Z"}
+  },
+  "required": ["id", "name", "namespace"]
+}

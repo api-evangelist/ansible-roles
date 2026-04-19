@@ -1,0 +1,103 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Ansible Roles
+  description: >-
+    Vocabulary covering the Ansible roles and collections ecosystem APIs
+    including Galaxy, Automation Hub, and related tools for discovering,
+    publishing, and consuming reusable Ansible automation content.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - name: Ansible Galaxy Roles API
+      namespace: galaxy-v1
+      version: "v1"
+      baseUrl: https://galaxy.ansible.com/api/v1/
+      status: active
+    - name: Ansible Galaxy Collections API
+      namespace: galaxy-v3
+      version: "v3"
+      baseUrl: https://galaxy.ansible.com/api/v3/
+      status: active
+    - name: Ansible Automation Hub Roles API
+      namespace: automation-hub
+      version: "v3"
+      baseUrl: https://console.redhat.com/api/automation-hub/v3/
+      status: active
+
+  resources:
+    - name: roles
+      description: Reusable Ansible role packages published on Galaxy.
+      apis: [galaxy-v1]
+      actions: [search, get, list, download]
+    - name: collections
+      description: Ansible content collections containing roles, modules, and plugins.
+      apis: [galaxy-v3, automation-hub]
+      actions: [search, get, list, download, publish]
+    - name: namespaces
+      description: Author namespaces grouping related roles and collections.
+      apis: [galaxy-v1, galaxy-v3, automation-hub]
+      actions: [get, list]
+    - name: versions
+      description: Specific versioned releases of roles or collections.
+      apis: [galaxy-v1, galaxy-v3, automation-hub]
+      actions: [get, list, download]
+
+  actions:
+    - name: search
+      description: Search roles or collections by keyword, author, or tag.
+      http_method: GET
+      pattern: read
+    - name: get
+      description: Retrieve a single resource by identifier.
+      http_method: GET
+      pattern: read
+    - name: list
+      description: List resources with filtering and pagination.
+      http_method: GET
+      pattern: read
+    - name: download
+      description: Download a role or collection archive.
+      http_method: GET
+      pattern: read
+    - name: publish
+      description: Publish a new collection version to Galaxy or Automation Hub.
+      http_method: POST
+      pattern: write
+
+  schemas:
+    core:
+      - name: Role
+        description: An Ansible role published on Galaxy.
+        key_properties: [id, name, namespace, github_user, github_repo, download_count, license]
+      - name: Collection
+        description: An Ansible collection package containing roles, modules, and plugins.
+        key_properties: [namespace, name, version, download_count, certified, requires_ansible]
+
+  parameters:
+    pagination:
+      - name: page
+        description: Page number.
+        type: integer
+      - name: page_size
+        description: Results per page.
+        type: integer
+    filters:
+      - name: search
+        description: Text search across role/collection names and descriptions.
+        type: string
+      - name: namespace
+        description: Filter by author namespace.
+        type: string
+      - name: tag
+        description: Filter by content tag.
+        type: string
+
+  authentication:
+    schemes:
+      - type: bearer
+        description: Galaxy API token for publishing content.
+      - type: apikey
+        description: Red Hat service account token for Automation Hub.
