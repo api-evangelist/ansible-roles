@@ -1,0 +1,367 @@
+openapi: 3.1.0
+info:
+  title: Ansible Galaxy Roles & Collections API
+  version: "1"
+  description: |
+    The Ansible Galaxy public REST API for discovering and consuming community
+    Ansible content. The legacy v1 surface covers community roles (search by
+    keyword, author, tag; download by version), users, namespaces, and import
+    tracking. The modern v3 surface is the Galaxy NG / Pulp API used by
+    Ansible collections (the modern packaging format that bundles roles,
+    modules, plugins, and playbooks).
+  contact:
+    name: Ansible Galaxy
+    url: https://galaxy.ansible.com
+servers:
+  - url: https://galaxy.ansible.com
+    description: Public Ansible Galaxy
+tags:
+  - name: Roles
+    description: Legacy v1 community roles API.
+  - name: Namespaces
+    description: Legacy v1 namespaces (mapped from GitHub orgs/users).
+  - name: Users
+    description: Legacy v1 users API.
+  - name: Imports
+    description: Track role import job status.
+  - name: Sync
+    description: Trigger legacy content sync.
+  - name: Collections
+    description: Modern v3 collections (Galaxy NG / Pulp).
+paths:
+  /api/:
+    get:
+      summary: API root
+      description: Lists available API versions (v1, v3, pulp v3).
+      operationId: getApiRoot
+      responses:
+        '200':
+          description: API root response with available versions.
+  /api/v1/:
+    get:
+      summary: Legacy v1 root
+      description: Lists the v1 endpoints (roles, users, namespaces, imports, sync).
+      operationId: getLegacyRoot
+      responses:
+        '200':
+          description: Legacy root response.
+  /api/v1/roles/:
+    get:
+      tags: [Roles]
+      summary: Search community roles
+      operationId: listRoles
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+            default: 10
+        - name: owner__username
+          in: query
+          description: Filter by GitHub username of the role owner.
+          schema:
+            type: string
+        - name: name
+          in: query
+          description: Filter by role name (substring match).
+          schema:
+            type: string
+        - name: keyword
+          in: query
+          description: Free-text keyword search.
+          schema:
+            type: string
+        - name: tag
+          in: query
+          description: Filter by tag (galaxy_tags).
+          schema:
+            type: string
+        - name: platforms
+          in: query
+          description: Filter by supported platform name.
+          schema:
+            type: string
+        - name: namespace
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+  /api/v1/roles/{id}/:
+    get:
+      tags: [Roles]
+      summary: Retrieve a role
+      operationId: getRole
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A role.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+  /api/v1/roles/{id}/versions/:
+    get:
+      tags: [Roles]
+      summary: List role versions
+      operationId: listRoleVersions
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+  /api/v1/roles/{id}/downloads/:
+    post:
+      tags: [Roles]
+      summary: Increment a role download counter
+      operationId: addRoleDownload
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '202':
+          description: Download tracked.
+  /api/v1/users/:
+    get:
+      tags: [Users]
+      summary: List users
+      operationId: listUsers
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+  /api/v1/users/{id}/:
+    get:
+      tags: [Users]
+      summary: Retrieve a user
+      operationId: getUser
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A user.
+  /api/v1/namespaces/:
+    get:
+      tags: [Namespaces]
+      summary: List namespaces
+      operationId: listNamespaces
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+  /api/v1/namespaces/{id}/:
+    get:
+      tags: [Namespaces]
+      summary: Retrieve a namespace
+      operationId: getNamespace
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A namespace.
+  /api/v1/imports/:
+    get:
+      tags: [Imports]
+      summary: List role import jobs
+      operationId: listImports
+      parameters:
+        - name: role_id
+          in: query
+          schema:
+            type: integer
+        - name: state
+          in: query
+          schema:
+            type: string
+            enum: [PENDING, RUNNING, SUCCESS, FAILED]
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+    post:
+      tags: [Imports]
+      summary: Trigger a role import
+      operationId: createImport
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [github_user, github_repo]
+              properties:
+                github_user:
+                  type: string
+                github_repo:
+                  type: string
+                github_reference:
+                  type: string
+                alternate_role_name:
+                  type: string
+      responses:
+        '202':
+          description: Import job queued.
+  /api/v1/imports/{id}/:
+    get:
+      tags: [Imports]
+      summary: Retrieve a role import job
+      operationId: getImport
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: An import job.
+  /api/v1/sync/:
+    post:
+      tags: [Sync]
+      summary: Trigger a content sync
+      operationId: createSync
+      responses:
+        '202':
+          description: Sync queued.
+  /api/v3/collections/:
+    get:
+      tags: [Collections]
+      summary: List collections
+      operationId: listCollections
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+  /api/v3/collections/{namespace}/{name}/:
+    get:
+      tags: [Collections]
+      summary: Retrieve a collection
+      operationId: getCollection
+      parameters:
+        - $ref: '#/components/parameters/Namespace'
+        - $ref: '#/components/parameters/Name'
+      responses:
+        '200':
+          description: A collection.
+  /api/v3/collections/{namespace}/{name}/versions/:
+    get:
+      tags: [Collections]
+      summary: List collection versions
+      operationId: listCollectionVersions
+      parameters:
+        - $ref: '#/components/parameters/Namespace'
+        - $ref: '#/components/parameters/Name'
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+  /api/v3/collections/{namespace}/{name}/versions/{version}/:
+    get:
+      tags: [Collections]
+      summary: Retrieve a collection version
+      operationId: getCollectionVersion
+      parameters:
+        - $ref: '#/components/parameters/Namespace'
+        - $ref: '#/components/parameters/Name'
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A specific version of a collection.
+components:
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: "Galaxy / Automation Hub token, sent as `Authorization: Token <value>`."
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    Namespace:
+      name: namespace
+      in: path
+      required: true
+      schema:
+        type: string
+    Name:
+      name: name
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    Role:
+      type: object
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+        name:
+          type: string
+        namespace:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+        github_user:
+          type: string
+        github_repo:
+          type: string
+        github_branch:
+          type: string
+        description:
+          type: string
+        min_ansible_version:
+          type: string
+        license:
+          type: string
+        company:
+          type: string
+        download_count:
+          type: integer
+        stargazers_count:
+          type: integer
+        forks_count:
+          type: integer
+        summary_fields:
+          type: object
+          additionalProperties: true
+    PagedList:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        next_link:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        previous_link:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+  responses:
+    PagedList:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagedList'
+security: []
