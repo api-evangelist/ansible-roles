@@ -5,7 +5,7 @@ description: >-
   the Ansible ecosystem. Covers the Galaxy and Automation Hub APIs for role
   discovery, download, and publishing, as well as the Ansible Collections
   framework that has extended the role model into full-featured content packages.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 created: "2024-01-01"
 modified: "2026-04-19"
 specificationVersion: '0.16'
@@ -25,7 +25,7 @@ apis:
       downloading Ansible roles contributed by the community. Supports searching
       roles by keyword, author, or tag; retrieving role details and version
       history; and downloading specific role versions for use in playbooks.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://galaxy.ansible.com
     baseURL: https://galaxy.ansible.com/api/v1/
     tags:
@@ -51,7 +51,7 @@ apis:
       plugins, and documentation together. Supports listing, searching,
       downloading, and versioning of published collections from the community
       namespace on Galaxy.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://galaxy.ansible.com
     baseURL: https://galaxy.ansible.com/api/v3/
     tags:
@@ -76,7 +76,7 @@ apis:
       Ansible collections and roles for enterprise use. The API enables access to
       Red Hat-certified content with SLA-backed quality, partner-certified
       content, and community content synced from Galaxy in supported namespaces.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://console.redhat.com/ansible/automation-hub
     baseURL: https://console.redhat.com/api/automation-hub/v3/
     tags:
