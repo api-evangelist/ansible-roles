@@ -103,6 +103,10 @@ maintainers:
     X: apievangelist
     url: https://apievangelist.com
 common:
+  - type: DomainSecurity
+    url: security/ansible-roles-domain-security.yml
+  - type: Authentication
+    url: authentication/ansible-roles-authentication.yml
   - type: GettingStarted
     url: https://docs.ansible.com/ansible/latest/galaxy/user_guide.html
   - type: Authentication

@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/ansible-roles-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: TokenAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: 'Galaxy / Automation Hub token, sent as `Authorization: Token <value>`.'
+  sources:
+  - openapi/ansible-roles-openapi.yml
