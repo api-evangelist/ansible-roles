@@ -1,0 +1,92 @@
+openapi: 3.1.0
+info:
+  title: Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Users API
+  version: '1'
+  description: 'The Ansible Galaxy public REST API for discovering and consuming community
+
+    Ansible content. The legacy v1 surface covers community roles (search by
+
+    keyword, author, tag; download by version), users, namespaces, and import
+
+    tracking. The modern v3 surface is the Galaxy NG / Pulp API used by
+
+    Ansible collections (the modern packaging format that bundles roles,
+
+    modules, plugins, and playbooks).
+
+    '
+  contact:
+    name: Ansible Galaxy
+    url: https://galaxy.ansible.com
+servers:
+- url: https://galaxy.ansible.com
+  description: Public Ansible Galaxy
+security: []
+tags:
+- name: Users
+  description: Legacy v1 users API.
+paths:
+  /api/v1/users/:
+    get:
+      tags:
+      - Users
+      summary: List users
+      operationId: listUsers
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+  /api/v1/users/{id}/:
+    get:
+      tags:
+      - Users
+      summary: Retrieve a user
+      operationId: getUser
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A user.
+components:
+  schemas:
+    PagedList:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        next_link:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        previous_link:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  responses:
+    PagedList:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagedList'
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Galaxy / Automation Hub token, sent as `Authorization: Token <value>`.'

@@ -1,0 +1,54 @@
+openapi: 3.1.0
+info:
+  title: Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API API
+  version: '1'
+  description: 'The Ansible Galaxy public REST API for discovering and consuming community
+
+    Ansible content. The legacy v1 surface covers community roles (search by
+
+    keyword, author, tag; download by version), users, namespaces, and import
+
+    tracking. The modern v3 surface is the Galaxy NG / Pulp API used by
+
+    Ansible collections (the modern packaging format that bundles roles,
+
+    modules, plugins, and playbooks).
+
+    '
+  contact:
+    name: Ansible Galaxy
+    url: https://galaxy.ansible.com
+servers:
+- url: https://galaxy.ansible.com
+  description: Public Ansible Galaxy
+security: []
+tags:
+- name: Ansible Galaxy Roles & Collections API
+paths:
+  /api/:
+    get:
+      summary: API root
+      description: Lists available API versions (v1, v3, pulp v3).
+      operationId: getApiRoot
+      responses:
+        '200':
+          description: API root response with available versions.
+      tags:
+      - Ansible Galaxy Roles & Collections API
+  /api/v1/:
+    get:
+      summary: Legacy v1 root
+      description: Lists the v1 endpoints (roles, users, namespaces, imports, sync).
+      operationId: getLegacyRoot
+      responses:
+        '200':
+          description: Legacy root response.
+      tags:
+      - Ansible Galaxy Roles & Collections API
+components:
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Galaxy / Automation Hub token, sent as `Authorization: Token <value>`.'

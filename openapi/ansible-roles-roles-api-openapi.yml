@@ -1,0 +1,198 @@
+openapi: 3.1.0
+info:
+  title: Ansible Galaxy & Collections Ansible Galaxy & Collections API Roles API
+  version: '1'
+  description: 'The Ansible Galaxy public REST API for discovering and consuming community
+
+    Ansible content. The legacy v1 surface covers community roles (search by
+
+    keyword, author, tag; download by version), users, namespaces, and import
+
+    tracking. The modern v3 surface is the Galaxy NG / Pulp API used by
+
+    Ansible collections (the modern packaging format that bundles roles,
+
+    modules, plugins, and playbooks).
+
+    '
+  contact:
+    name: Ansible Galaxy
+    url: https://galaxy.ansible.com
+servers:
+- url: https://galaxy.ansible.com
+  description: Public Ansible Galaxy
+security: []
+tags:
+- name: Roles
+  description: Legacy v1 community roles API.
+paths:
+  /api/v1/roles/:
+    get:
+      tags:
+      - Roles
+      summary: Search community roles
+      operationId: listRoles
+      parameters:
+      - name: page
+        in: query
+        schema:
+          type: integer
+          minimum: 1
+          default: 1
+      - name: page_size
+        in: query
+        schema:
+          type: integer
+          default: 10
+      - name: owner__username
+        in: query
+        description: Filter by GitHub username of the role owner.
+        schema:
+          type: string
+      - name: name
+        in: query
+        description: Filter by role name (substring match).
+        schema:
+          type: string
+      - name: keyword
+        in: query
+        description: Free-text keyword search.
+        schema:
+          type: string
+      - name: tag
+        in: query
+        description: Filter by tag (galaxy_tags).
+        schema:
+          type: string
+      - name: platforms
+        in: query
+        description: Filter by supported platform name.
+        schema:
+          type: string
+      - name: namespace
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+  /api/v1/roles/{id}/:
+    get:
+      tags:
+      - Roles
+      summary: Retrieve a role
+      operationId: getRole
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: A role.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+  /api/v1/roles/{id}/versions/:
+    get:
+      tags:
+      - Roles
+      summary: List role versions
+      operationId: listRoleVersions
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+  /api/v1/roles/{id}/downloads/:
+    post:
+      tags:
+      - Roles
+      summary: Increment a role download counter
+      operationId: addRoleDownload
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '202':
+          description: Download tracked.
+components:
+  schemas:
+    PagedList:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        next_link:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        previous_link:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+    Role:
+      type: object
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+        name:
+          type: string
+        namespace:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+        github_user:
+          type: string
+        github_repo:
+          type: string
+        github_branch:
+          type: string
+        description:
+          type: string
+        min_ansible_version:
+          type: string
+        license:
+          type: string
+        company:
+          type: string
+        download_count:
+          type: integer
+        stargazers_count:
+          type: integer
+        forks_count:
+          type: integer
+        summary_fields:
+          type: object
+          additionalProperties: true
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  responses:
+    PagedList:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagedList'
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Galaxy / Automation Hub token, sent as `Authorization: Token <value>`.'

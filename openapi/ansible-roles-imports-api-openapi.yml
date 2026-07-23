@@ -1,0 +1,132 @@
+openapi: 3.1.0
+info:
+  title: Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Imports API
+  version: '1'
+  description: 'The Ansible Galaxy public REST API for discovering and consuming community
+
+    Ansible content. The legacy v1 surface covers community roles (search by
+
+    keyword, author, tag; download by version), users, namespaces, and import
+
+    tracking. The modern v3 surface is the Galaxy NG / Pulp API used by
+
+    Ansible collections (the modern packaging format that bundles roles,
+
+    modules, plugins, and playbooks).
+
+    '
+  contact:
+    name: Ansible Galaxy
+    url: https://galaxy.ansible.com
+servers:
+- url: https://galaxy.ansible.com
+  description: Public Ansible Galaxy
+security: []
+tags:
+- name: Imports
+  description: Track role import job status.
+paths:
+  /api/v1/imports/:
+    get:
+      tags:
+      - Imports
+      summary: List role import jobs
+      operationId: listImports
+      parameters:
+      - name: role_id
+        in: query
+        schema:
+          type: integer
+      - name: state
+        in: query
+        schema:
+          type: string
+          enum:
+          - PENDING
+          - RUNNING
+          - SUCCESS
+          - FAILED
+      responses:
+        '200':
+          $ref: '#/components/responses/PagedList'
+    post:
+      tags:
+      - Imports
+      summary: Trigger a role import
+      operationId: createImport
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - github_user
+              - github_repo
+              properties:
+                github_user:
+                  type: string
+                github_repo:
+                  type: string
+                github_reference:
+                  type: string
+                alternate_role_name:
+                  type: string
+      responses:
+        '202':
+          description: Import job queued.
+  /api/v1/imports/{id}/:
+    get:
+      tags:
+      - Imports
+      summary: Retrieve a role import job
+      operationId: getImport
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: An import job.
+components:
+  schemas:
+    PagedList:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        next_link:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        previous_link:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  responses:
+    PagedList:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagedList'
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Galaxy / Automation Hub token, sent as `Authorization: Token <value>`.'

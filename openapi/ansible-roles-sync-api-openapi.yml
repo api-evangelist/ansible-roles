@@ -1,0 +1,44 @@
+openapi: 3.1.0
+info:
+  title: Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Sync API
+  version: '1'
+  description: 'The Ansible Galaxy public REST API for discovering and consuming community
+
+    Ansible content. The legacy v1 surface covers community roles (search by
+
+    keyword, author, tag; download by version), users, namespaces, and import
+
+    tracking. The modern v3 surface is the Galaxy NG / Pulp API used by
+
+    Ansible collections (the modern packaging format that bundles roles,
+
+    modules, plugins, and playbooks).
+
+    '
+  contact:
+    name: Ansible Galaxy
+    url: https://galaxy.ansible.com
+servers:
+- url: https://galaxy.ansible.com
+  description: Public Ansible Galaxy
+security: []
+tags:
+- name: Sync
+  description: Trigger legacy content sync.
+paths:
+  /api/v1/sync/:
+    post:
+      tags:
+      - Sync
+      summary: Trigger a content sync
+      operationId: createSync
+      responses:
+        '202':
+          description: Sync queued.
+components:
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Galaxy / Automation Hub token, sent as `Authorization: Token <value>`.'
