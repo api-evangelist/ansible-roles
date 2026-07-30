@@ -5,7 +5,20 @@ description: >-
   the Ansible ecosystem. Covers the Galaxy and Automation Hub APIs for role
   discovery, download, and publishing, as well as the Ansible Collections
   framework that has extended the role model into full-featured content packages.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ansible-roles.png
 created: "2024-01-01"
 modified: "2026-04-19"
 specificationVersion: '0.16'
@@ -19,84 +32,149 @@ tags:
   - Infrastructure As Code
   - Roles
 apis:
-  - name: Ansible Galaxy Roles API
-    description: >-
-      The Ansible Galaxy v1 and v2 REST API enables searching, discovering, and
-      downloading Ansible roles contributed by the community. Supports searching
-      roles by keyword, author, or tag; retrieving role details and version
-      history; and downloading specific role versions for use in playbooks.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://galaxy.ansible.com
-    baseURL: https://galaxy.ansible.com/api/v1/
-    tags:
-      - Ansible
-      - Community
-      - Galaxy
-      - Roles
-    properties:
-      - type: Documentation
-        url: https://galaxy.ansible.com/docs/
-      - type: APIReference
-        url: https://galaxy.ansible.com/api/v1/
-      - type: GettingStarted
-        url: https://docs.ansible.com/ansible/latest/galaxy/user_guide.html
-    contact:
-      - FN: Ansible Galaxy Team
-        url: https://github.com/ansible/galaxy/issues
-
-  - name: Ansible Galaxy Collections API
-    description: >-
-      The Ansible Galaxy v3 API provides enhanced support for Ansible
-      collections — the modern packaging format that bundles roles, modules,
-      plugins, and documentation together. Supports listing, searching,
-      downloading, and versioning of published collections from the community
-      namespace on Galaxy.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://galaxy.ansible.com
-    baseURL: https://galaxy.ansible.com/api/v3/
-    tags:
-      - Ansible
-      - Collections
-      - Community
-      - Galaxy
-    properties:
-      - type: Documentation
-        url: https://galaxy.ansible.com/docs/
-      - type: APIReference
-        url: https://galaxy.ansible.com/api/v3/
-      - type: GettingStarted
-        url: https://docs.ansible.com/ansible/latest/collections/index.html
-    contact:
-      - FN: Ansible Galaxy Team
-        url: https://github.com/ansible/galaxy/issues
-
-  - name: Ansible Automation Hub Roles API
-    description: >-
-      The Red Hat Ansible Automation Hub provides certified and partner-validated
-      Ansible collections and roles for enterprise use. The API enables access to
-      Red Hat-certified content with SLA-backed quality, partner-certified
-      content, and community content synced from Galaxy in supported namespaces.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://console.redhat.com/ansible/automation-hub
-    baseURL: https://console.redhat.com/api/automation-hub/v3/
-    tags:
-      - Ansible
-      - Certified Content
-      - Collections
-      - Enterprise
-      - Red Hat
-      - Roles
-    properties:
-      - type: Documentation
-        url: https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/
-      - type: APIReference
-        url: https://console.redhat.com/api/automation-hub/v3/
-      - type: Portal
-        url: https://console.redhat.com/ansible/automation-hub
-    contact:
-      - FN: Red Hat Support
-        url: https://access.redhat.com/support
-
+- name: Ansible Galaxy Roles API
+  description: >-
+    The Ansible Galaxy v1 and v2 REST API enables searching, discovering, and downloading Ansible roles
+    contributed by the community. Supports searching roles by keyword, author, or tag; retrieving role
+    details and version history; and downloading specific role versions for use in playbooks.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://galaxy.ansible.com
+  baseURL: https://galaxy.ansible.com/api/v1/
+  tags:
+  - Ansible
+  - Community
+  - Galaxy
+  - Roles
+  properties:
+  - type: Documentation
+    url: https://galaxy.ansible.com/docs/
+  - type: APIReference
+    url: https://galaxy.ansible.com/api/v1/
+  - type: GettingStarted
+    url: https://docs.ansible.com/ansible/latest/galaxy/user_guide.html
+  contact:
+  - FN: Ansible Galaxy Team
+    url: https://github.com/ansible/galaxy/issues
+- name: Ansible Galaxy Collections API
+  description: >-
+    The Ansible Galaxy v3 API provides enhanced support for Ansible collections — the modern packaging
+    format that bundles roles, modules, plugins, and documentation together. Supports listing, searching,
+    downloading, and versioning of published collections from the community namespace on Galaxy.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://galaxy.ansible.com
+  baseURL: https://galaxy.ansible.com/api/v3/
+  tags:
+  - Ansible
+  - Collections
+  - Community
+  - Galaxy
+  properties:
+  - type: Documentation
+    url: https://galaxy.ansible.com/docs/
+  - type: APIReference
+    url: https://galaxy.ansible.com/api/v3/
+  - type: GettingStarted
+    url: https://docs.ansible.com/ansible/latest/collections/index.html
+  contact:
+  - FN: Ansible Galaxy Team
+    url: https://github.com/ansible/galaxy/issues
+- name: Ansible Automation Hub Roles API
+  description: >-
+    The Red Hat Ansible Automation Hub provides certified and partner-validated Ansible collections and
+    roles for enterprise use. The API enables access to Red Hat-certified content with SLA-backed quality,
+    partner-certified content, and community content synced from Galaxy in supported namespaces.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://console.redhat.com/ansible/automation-hub
+  baseURL: https://console.redhat.com/api/automation-hub/v3/
+  tags:
+  - Ansible
+  - Certified Content
+  - Collections
+  - Enterprise
+  - Red Hat
+  - Roles
+  properties:
+  - type: Documentation
+    url: https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/
+  - type: APIReference
+    url: https://console.redhat.com/api/automation-hub/v3/
+  - type: Portal
+    url: https://console.redhat.com/ansible/automation-hub
+  contact:
+  - FN: Red Hat Support
+    url: https://access.redhat.com/support
+- aid: ansible-roles:ansible-roles-ansible-galaxy-roles-collections-api-api
+  name: Ansible Roles Ansible Galaxy Roles & Collections API API
+  description: >-
+    The Ansible Galaxy Roles & Collections API API from Ansible Roles — 2 operation(s) for ansible galaxy
+    roles & collections api.
+  humanURL: https://galaxy.ansible.com
+  baseURL: https://galaxy.ansible.com/api/v1/
+  tags:
+  - Ansible Galaxy Roles & Collections API
+  properties:
+  - type: OpenAPI
+    url: openapi/ansible-roles-ansible-galaxy-roles-collections-api-api-openapi.yml
+- aid: ansible-roles:ansible-roles-collections-api
+  name: Ansible Roles Collections API
+  description: Modern v3 collections (Galaxy NG / Pulp).
+  humanURL: https://galaxy.ansible.com
+  baseURL: https://galaxy.ansible.com/api/v1/
+  tags:
+  - Collections
+  properties:
+  - type: OpenAPI
+    url: openapi/ansible-roles-collections-api-openapi.yml
+- aid: ansible-roles:ansible-roles-imports-api
+  name: Ansible Roles Imports API
+  description: Track role import job status.
+  humanURL: https://galaxy.ansible.com
+  baseURL: https://galaxy.ansible.com/api/v1/
+  tags:
+  - Imports
+  properties:
+  - type: OpenAPI
+    url: openapi/ansible-roles-imports-api-openapi.yml
+- aid: ansible-roles:ansible-roles-namespaces-api
+  name: Ansible Roles Namespaces API
+  description: Legacy v1 namespaces (mapped from GitHub orgs/users).
+  humanURL: https://galaxy.ansible.com
+  baseURL: https://galaxy.ansible.com/api/v1/
+  tags:
+  - Namespaces
+  properties:
+  - type: OpenAPI
+    url: openapi/ansible-roles-namespaces-api-openapi.yml
+- aid: ansible-roles:ansible-roles-roles-api
+  name: Ansible Roles Roles API
+  description: Legacy v1 community roles API.
+  humanURL: https://galaxy.ansible.com
+  baseURL: https://galaxy.ansible.com/api/v1/
+  tags:
+  - Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/ansible-roles-roles-api-openapi.yml
+- aid: ansible-roles:ansible-roles-sync-api
+  name: Ansible Roles Sync API
+  description: Trigger legacy content sync.
+  humanURL: https://galaxy.ansible.com
+  baseURL: https://galaxy.ansible.com/api/v1/
+  tags:
+  - Sync
+  properties:
+  - type: OpenAPI
+    url: openapi/ansible-roles-sync-api-openapi.yml
+- aid: ansible-roles:ansible-roles-users-api
+  name: Ansible Roles Users API
+  description: Legacy v1 users API.
+  humanURL: https://galaxy.ansible.com
+  baseURL: https://galaxy.ansible.com/api/v1/
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/ansible-roles-users-api-openapi.yml
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
