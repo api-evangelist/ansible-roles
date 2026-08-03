@@ -1,0 +1,26 @@
+{
+  "provider": "ansible-roles",
+  "sources": [
+    "ansible-roles-ansible-galaxy-roles-collections-api-api-openapi.yml",
+    "ansible-roles-collections-api-openapi.yml",
+    "ansible-roles-imports-api-openapi.yml",
+    "ansible-roles-namespaces-api-openapi.yml",
+    "ansible-roles-roles-api-openapi.yml",
+    "ansible-roles-sync-api-openapi.yml",
+    "ansible-roles-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "ansible-roles-ansible-galaxy-roles-collections-api-api-openapi.yml",
+    "ansible-roles-collections-api-openapi.yml",
+    "ansible-roles-imports-api-openapi.yml",
+    "ansible-roles-namespaces-api-openapi.yml",
+    "ansible-roles-roles-api-openapi.yml",
+    "ansible-roles-sync-api-openapi.yml",
+    "ansible-roles-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
