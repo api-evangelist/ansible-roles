@@ -181,6 +181,15 @@ maintainers:
     X: apievangelist
     url: https://apievangelist.com
 common:
+  - type: Releases
+    url: https://github.com/ansible/galaxy/releases
+  - type: CodeOfConduct
+    url: https://github.com/ansible/galaxy/blob/devel/.github/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/ansible/galaxy/blob/devel/CONTRIBUTING.rst
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/ansible/galaxy/blob/devel/LICENSE
   - type: AgenticAccess
     url: agentic-access/ansible-roles-agentic-access.yml
   - type: DomainSecurity
