@@ -21,7 +21,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ansible-roles.png
 created: "2024-01-01"
 modified: "2026-04-19"
-specificationVersion: '0.16'
+specificationVersion: '0.23'
 url: https://raw.githubusercontent.com/api-evangelist/ansible-roles/refs/heads/main/apis.yml
 tags:
   - Ansible
