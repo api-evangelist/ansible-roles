@@ -1,0 +1,154 @@
+{
+  "item": [
+    {
+      "id": "73ccfcca-be03-4f1a-ac1f-7d7f7a4f9567",
+      "name": "Ansible Galaxy Roles & Collections API",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "803daf63-4309-43f6-876b-f37c4c5566b9",
+          "name": "API root",
+          "request": {
+            "name": "API root",
+            "description": {
+              "content": "Lists available API versions (v1, v3, pulp v3).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fc833551-e7da-4b47-9671-294096bc2bdc",
+              "name": "API root response with available versions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d857ff5e-3516-4d2a-afe3-fa5b1cfac6d1",
+          "name": "Legacy v1 root",
+          "request": {
+            "name": "Legacy v1 root",
+            "description": {
+              "content": "Lists the v1 endpoints (roles, users, namespaces, imports, sync).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ae768b3-4dae-4dfe-b536-430ceb01adef",
+              "name": "Legacy root response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://galaxy.ansible.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7f3ae602-e814-4a51-a014-662ef24620ca",
+    "name": "Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ansible Galaxy public REST API for discovering and consuming community\nAnsible content. The legacy v1 surface covers community roles (search by\nkeyword, author, tag; download by version), users, namespaces, and import\ntracking. The modern v3 surface is the Galaxy NG / Pulp API used by\nAnsible collections (the modern packaging format that bundles roles,\nmodules, plugins, and playbooks).\n\n\nContact Support:\n Name: Ansible Galaxy",
+      "type": "text/plain"
+    }
+  }
+}

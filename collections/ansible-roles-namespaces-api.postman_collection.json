@@ -1,0 +1,184 @@
+{
+  "item": [
+    {
+      "id": "60373213-c7ea-42f7-9132-f35a08d0dfd7",
+      "name": "Namespaces",
+      "description": {
+        "content": "Legacy v1 namespaces (mapped from GitHub orgs/users).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "89c3dc7c-4e23-4884-83fe-98db35a3a591",
+          "name": "List namespaces",
+          "request": {
+            "name": "List namespaces",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "namespaces",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5368db4-de15-4ed7-ad19-b0154c4f3f11",
+              "name": "A paginated list response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "namespaces",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 2290,\n  \"next\": \"string\",\n  \"next_link\": \"string\",\n  \"previous\": \"string\",\n  \"previous_link\": \"string\",\n  \"results\": [\n    {\n      \"key_0\": 9778.811929346459,\n      \"key_1\": 1339.9494393985801\n    },\n    {\n      \"key_0\": 1567,\n      \"key_1\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c7a2a0c-9e92-48ea-a679-1233521792d8",
+          "name": "Retrieve a namespace",
+          "request": {
+            "name": "Retrieve a namespace",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "namespaces",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46d13528-a80f-44c6-9212-5c4f453ce9e8",
+              "name": "A namespace.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "namespaces",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://galaxy.ansible.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d282bf34-0ac2-499c-8ad0-63502640c5b5",
+    "name": "Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Namespaces API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ansible Galaxy public REST API for discovering and consuming community\nAnsible content. The legacy v1 surface covers community roles (search by\nkeyword, author, tag; download by version), users, namespaces, and import\ntracking. The modern v3 surface is the Galaxy NG / Pulp API used by\nAnsible collections (the modern packaging format that bundles roles,\nmodules, plugins, and playbooks).\n\n\nContact Support:\n Name: Ansible Galaxy",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Galaxy & Collections Ansible Galaxy & Collections API Roles API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Roles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search community roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v1/roles/",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "owner__username",
+                "value": "",
+                "type": "query",
+                "description": "Filter by GitHub username of the role owner."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by role name (substring match)."
+              },
+              {
+                "name": "keyword",
+                "value": "",
+                "type": "query",
+                "description": "Free-text keyword search."
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query",
+                "description": "Filter by tag (galaxy_tags)."
+              },
+              {
+                "name": "platforms",
+                "value": "",
+                "type": "query",
+                "description": "Filter by supported platform name."
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search community roles"
+        },
+        {
+          "info": {
+            "name": "Retrieve a role",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v1/roles/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a role"
+        },
+        {
+          "info": {
+            "name": "List role versions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v1/roles/:id/versions/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List role versions"
+        },
+        {
+          "info": {
+            "name": "Increment a role download counter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://galaxy.ansible.com/api/v1/roles/:id/downloads/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Increment a role download counter"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

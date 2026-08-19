@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Sync API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sync",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Trigger a content sync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://galaxy.ansible.com/api/v1/sync/"
+          },
+          "docs": "Trigger a content sync"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

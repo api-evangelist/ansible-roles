@@ -1,0 +1,449 @@
+{
+  "item": [
+    {
+      "id": "1755dca0-0e40-43df-8aae-faa64a077eab",
+      "name": "Roles",
+      "description": {
+        "content": "Legacy v1 community roles API.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "845cb209-147c-4cb9-8ec0-88e12bee792c",
+          "name": "Search community roles",
+          "request": {
+            "name": "Search community roles",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "roles",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "owner__username",
+                  "value": "<string>",
+                  "description": "Filter by GitHub username of the role owner."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by role name (substring match)."
+                },
+                {
+                  "disabled": false,
+                  "key": "keyword",
+                  "value": "<string>",
+                  "description": "Free-text keyword search."
+                },
+                {
+                  "disabled": false,
+                  "key": "tag",
+                  "value": "<string>",
+                  "description": "Filter by tag (galaxy_tags)."
+                },
+                {
+                  "disabled": false,
+                  "key": "platforms",
+                  "value": "<string>",
+                  "description": "Filter by supported platform name."
+                },
+                {
+                  "disabled": false,
+                  "key": "namespace",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "faacd1c5-4571-4aa6-91f3-e335f84854fe",
+              "name": "A paginated list response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "owner__username",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "keyword",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "platforms",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "namespace",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 5354,\n  \"next\": \"string\",\n  \"next_link\": \"string\",\n  \"previous\": \"string\",\n  \"previous_link\": \"string\",\n  \"results\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": 1948.458185294276,\n      \"key_1\": true,\n      \"key_2\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e29b2ef4-871d-4d57-8ef0-b0f9703324f4",
+          "name": "Retrieve a role",
+          "request": {
+            "name": "Retrieve a role",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "roles",
+                ":id",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4c33b9a2-8e8b-49a5-9207-572e7cf0a326",
+              "name": "A role.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    ":id",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2551,\n  \"url\": \"string\",\n  \"name\": \"string\",\n  \"namespace\": {\n    \"id\": 1500,\n    \"name\": \"string\"\n  },\n  \"github_user\": \"string\",\n  \"github_repo\": \"string\",\n  \"github_branch\": \"string\",\n  \"description\": \"string\",\n  \"min_ansible_version\": \"string\",\n  \"license\": \"string\",\n  \"company\": \"string\",\n  \"download_count\": 1616,\n  \"stargazers_count\": 4255,\n  \"forks_count\": 2177,\n  \"summary_fields\": {\n    \"key_0\": 6849.388442468781\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa1acbdf-0570-4ff7-b3a8-43d7129dc610",
+          "name": "List role versions",
+          "request": {
+            "name": "List role versions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "roles",
+                ":id",
+                "versions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64937e94-b294-4a51-8f07-e2c11972fb2d",
+              "name": "A paginated list response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    ":id",
+                    "versions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 9062,\n  \"next\": \"string\",\n  \"next_link\": \"string\",\n  \"previous\": \"string\",\n  \"previous_link\": \"string\",\n  \"results\": [\n    {\n      \"key_0\": 7189.434395848805,\n      \"key_1\": 1066\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "25a59b86-9fda-436e-9994-70b0d6aa47dc",
+          "name": "Increment a role download counter",
+          "request": {
+            "name": "Increment a role download counter",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "roles",
+                ":id",
+                "downloads",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d57330a-20e9-4e06-ab9b-8c619929de08",
+              "name": "Download tracked.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    ":id",
+                    "downloads",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://galaxy.ansible.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fe15eed7-2f9b-436a-aa31-674d49348d08",
+    "name": "Ansible Galaxy & Collections Ansible Galaxy & Collections API Roles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ansible Galaxy public REST API for discovering and consuming community\nAnsible content. The legacy v1 surface covers community roles (search by\nkeyword, author, tag; download by version), users, namespaces, and import\ntracking. The modern v3 surface is the Galaxy NG / Pulp API used by\nAnsible collections (the modern packaging format that bundles roles,\nmodules, plugins, and playbooks).\n\n\nContact Support:\n Name: Ansible Galaxy",
+      "type": "text/plain"
+    }
+  }
+}

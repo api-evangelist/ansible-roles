@@ -1,0 +1,93 @@
+{
+  "item": [
+    {
+      "id": "74aedc66-c924-4ce5-9121-71b0b61ff936",
+      "name": "Sync",
+      "description": {
+        "content": "Trigger legacy content sync.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "189e77d3-f2c3-4799-8663-dab3a8047acd",
+          "name": "Trigger a content sync",
+          "request": {
+            "name": "Trigger a content sync",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "sync",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4301f556-3c4d-4846-a291-bcf3d5a66dd5",
+              "name": "Sync queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "sync",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://galaxy.ansible.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "add41f2a-06f0-4470-a369-a5b1c75b9ae2",
+    "name": "Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Sync API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ansible Galaxy public REST API for discovering and consuming community\nAnsible content. The legacy v1 surface covers community roles (search by\nkeyword, author, tag; download by version), users, namespaces, and import\ntracking. The modern v3 surface is the Galaxy NG / Pulp API used by\nAnsible collections (the modern packaging format that bundles roles,\nmodules, plugins, and playbooks).\n\n\nContact Support:\n Name: Ansible Galaxy",
+      "type": "text/plain"
+    }
+  }
+}

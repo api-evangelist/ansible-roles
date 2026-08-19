@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Namespaces API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Namespaces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List namespaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v1/namespaces/"
+          },
+          "docs": "List namespaces"
+        },
+        {
+          "info": {
+            "name": "Retrieve a namespace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v1/namespaces/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a namespace"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

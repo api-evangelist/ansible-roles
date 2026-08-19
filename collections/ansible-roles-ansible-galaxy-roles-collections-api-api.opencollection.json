@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ansible Galaxy Roles & Collections API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "API root",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/"
+          },
+          "docs": "Lists available API versions (v1, v3, pulp v3)."
+        },
+        {
+          "info": {
+            "name": "Legacy v1 root",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v1/"
+          },
+          "docs": "Lists the v1 endpoints (roles, users, namespaces, imports, sync)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

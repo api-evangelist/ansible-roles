@@ -1,0 +1,422 @@
+{
+  "item": [
+    {
+      "id": "387f80ce-905a-4bde-8383-0e9664a60824",
+      "name": "Collections",
+      "description": {
+        "content": "Modern v3 collections (Galaxy NG / Pulp).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c953fa89-71c0-4d19-96f1-fc19cac6e9ff",
+          "name": "List collections",
+          "request": {
+            "name": "List collections",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "collections",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aee9a46c-d2cc-46c2-b35a-1788cb639117",
+              "name": "A paginated list response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "collections",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 1276,\n  \"next\": \"string\",\n  \"next_link\": \"string\",\n  \"previous\": \"string\",\n  \"previous_link\": \"string\",\n  \"results\": [\n    {\n      \"key_0\": 9138.032852309283,\n      \"key_1\": 8115,\n      \"key_2\": true\n    },\n    {\n      \"key_0\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a9a44de-5fb9-48c5-b358-bf47bd9640f3",
+          "name": "Retrieve a collection",
+          "request": {
+            "name": "Retrieve a collection",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "collections",
+                ":namespace",
+                ":name",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38b9b820-cfe2-4c17-ae22-9d3f839b2f7d",
+              "name": "A collection.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "collections",
+                    ":namespace",
+                    ":name",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b97105c1-56aa-4727-83ca-69bf420e2c70",
+          "name": "List collection versions",
+          "request": {
+            "name": "List collection versions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "collections",
+                ":namespace",
+                ":name",
+                "versions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "70c6fbfd-7605-41a0-bd57-56951f3a64f8",
+              "name": "A paginated list response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "collections",
+                    ":namespace",
+                    ":name",
+                    "versions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 364,\n  \"next\": \"string\",\n  \"next_link\": \"string\",\n  \"previous\": \"string\",\n  \"previous_link\": \"string\",\n  \"results\": [\n    {\n      \"key_0\": true,\n      \"key_1\": 1540.6772621796117\n    },\n    {\n      \"key_0\": false,\n      \"key_1\": \"string\",\n      \"key_2\": 3349,\n      \"key_3\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1181e04-5603-4978-bd2e-7aaa422b2a98",
+          "name": "Retrieve a collection version",
+          "request": {
+            "name": "Retrieve a collection version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "collections",
+                ":namespace",
+                ":name",
+                "versions",
+                ":version",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a952f3cf-c9e3-4ce9-96ed-acfc648df749",
+              "name": "A specific version of a collection.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "collections",
+                    ":namespace",
+                    ":name",
+                    "versions",
+                    ":version",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://galaxy.ansible.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ff3ce6f0-17f1-400c-9b5c-80853d1e089c",
+    "name": "Ansible Galaxy Roles & Ansible Galaxy Roles & API Collections API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ansible Galaxy public REST API for discovering and consuming community\nAnsible content. The legacy v1 surface covers community roles (search by\nkeyword, author, tag; download by version), users, namespaces, and import\ntracking. The modern v3 surface is the Galaxy NG / Pulp API used by\nAnsible collections (the modern packaging format that bundles roles,\nmodules, plugins, and playbooks).\n\n\nContact Support:\n Name: Ansible Galaxy",
+      "type": "text/plain"
+    }
+  }
+}

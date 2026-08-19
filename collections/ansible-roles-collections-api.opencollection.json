@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Galaxy Roles & Ansible Galaxy Roles & API Collections API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v3/collections/"
+          },
+          "docs": "List collections"
+        },
+        {
+          "info": {
+            "name": "Retrieve a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v3/collections/:namespace/:name/",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a collection"
+        },
+        {
+          "info": {
+            "name": "List collection versions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v3/collections/:namespace/:name/versions/",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List collection versions"
+        },
+        {
+          "info": {
+            "name": "Retrieve a collection version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v3/collections/:namespace/:name/versions/:version/",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a collection version"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

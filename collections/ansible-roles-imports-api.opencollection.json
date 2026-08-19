@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Imports API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Imports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List role import jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v1/imports/",
+            "params": [
+              {
+                "name": "role_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List role import jobs"
+        },
+        {
+          "info": {
+            "name": "Trigger a role import",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://galaxy.ansible.com/api/v1/imports/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trigger a role import"
+        },
+        {
+          "info": {
+            "name": "Retrieve a role import job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://galaxy.ansible.com/api/v1/imports/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a role import job"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
