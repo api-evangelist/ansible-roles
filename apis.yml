@@ -26,6 +26,14 @@ url: https://raw.githubusercontent.com/api-evangelist/ansible-roles/refs/heads/m
 tags:
   - Ansible
   - Automation
+  - Collection
+  - Configuration Management
+  - DevOps
+  - Infrastructure as Code
+  - Roles
+tags_raw:
+  - Ansible
+  - Automation
   - Collections
   - Configuration Management
   - DevOps
@@ -65,6 +73,11 @@ apis:
   baseURL: https://galaxy.ansible.com/api/v3/
   tags:
   - Ansible
+  - Collection
+  - Community
+  - Galaxy
+  tags_raw:
+  - Ansible
   - Collections
   - Community
   - Galaxy
@@ -87,6 +100,13 @@ apis:
   humanURL: https://console.redhat.com/ansible/automation-hub
   baseURL: https://console.redhat.com/api/automation-hub/v3/
   tags:
+  - Ansible
+  - Certified Content
+  - Collection
+  - Enterprise
+  - Red Hat
+  - Roles
+  tags_raw:
   - Ansible
   - Certified Content
   - Collections
@@ -121,6 +141,8 @@ apis:
   humanURL: https://galaxy.ansible.com
   baseURL: https://galaxy.ansible.com/api/v1/
   tags:
+  - Collection
+  tags_raw:
   - Collections
   properties:
   - type: OpenAPI
@@ -171,6 +193,8 @@ apis:
   humanURL: https://galaxy.ansible.com
   baseURL: https://galaxy.ansible.com/api/v1/
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
