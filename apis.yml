@@ -5,6 +5,20 @@ description: >-
   the Ansible ecosystem. Covers the Galaxy and Automation Hub APIs for role
   discovery, download, and publishing, as well as the Ansible Collections
   framework that has extended the role model into full-featured content packages.
+deliveryModel:
+  model: open-core
+  license: Apache-2.0
+  open_source: true
+  commercial: true
+  callable_host: true
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: high
+  source:
+  - license
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
