@@ -214,6 +214,8 @@ maintainers:
   X: apievangelist
   url: https://apievangelist.com
 common:
+- type: Website
+  url: https://ansible.com
 - type: Releases
   url: https://github.com/ansible/galaxy/releases
 - type: CodeOfConduct
