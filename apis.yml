@@ -162,6 +162,8 @@ apis:
   humanURL: https://galaxy.ansible.com
   baseURL: https://galaxy.ansible.com/api/v1/
   tags:
+  - Import
+  tags_raw:
   - Imports
   properties:
   - type: OpenAPI
