@@ -1,13 +1,7 @@
 {
   "provider": "ansible-roles",
   "sources": [
-    "ansible-roles-ansible-galaxy-roles-collections-api-api-openapi.yml",
-    "ansible-roles-collections-api-openapi.yml",
-    "ansible-roles-imports-api-openapi.yml",
-    "ansible-roles-namespaces-api-openapi.yml",
-    "ansible-roles-roles-api-openapi.yml",
-    "ansible-roles-sync-api-openapi.yml",
-    "ansible-roles-users-api-openapi.yml"
+    "_original/ansible-roles-openapi.yml"
   ],
   "outputs": [
     "ansible-roles-ansible-galaxy-roles-collections-api-api-openapi.yml",
@@ -21,6 +15,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ansible-roles-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "ansible-roles-openapi.yml: tagged paths GET /api/ -> Ansible Galaxy Roles & Collections API",
+    "ansible-roles-openapi.yml: tagged paths GET /api/v1/ -> Ansible Galaxy Roles & Collections API",
+    "ansible-roles-openapi.yml: declared missing tag: Ansible Galaxy Roles & Collections API",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ansible-roles-ansible-galaxy-roles-collections-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ansible-roles-collections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ansible-roles-imports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ansible-roles-namespaces-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ansible-roles-roles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ansible-roles-sync-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ansible-roles-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

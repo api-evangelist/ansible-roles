@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Ansible Galaxy & Collections Ansible Galaxy & Collections API Roles API
+  title: Ansible Galaxy & Collections Roles API
   version: '1'
   description: 'The Ansible Galaxy public REST API for discovering and consuming community
 
@@ -12,9 +12,7 @@ info:
 
     Ansible collections (the modern packaging format that bundles roles,
 
-    modules, plugins, and playbooks).
-
-    '
+    modules, plugins, and playbooks).'
   contact:
     name: Ansible Galaxy
     url: https://galaxy.ansible.com
@@ -115,28 +113,6 @@ paths:
           description: Download tracked.
 components:
   schemas:
-    PagedList:
-      type: object
-      properties:
-        count:
-          type: integer
-        next:
-          type: string
-          nullable: true
-        next_link:
-          type: string
-          nullable: true
-        previous:
-          type: string
-          nullable: true
-        previous_link:
-          type: string
-          nullable: true
-        results:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
     Role:
       type: object
       properties:
@@ -176,6 +152,28 @@ components:
         summary_fields:
           type: object
           additionalProperties: true
+    PagedList:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        next_link:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        previous_link:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
   parameters:
     Id:
       name: id

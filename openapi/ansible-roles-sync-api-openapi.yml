@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Sync API
+  title: Ansible Galaxy Roles & Collections Sync API
   version: '1'
   description: 'The Ansible Galaxy public REST API for discovering and consuming community
 
@@ -12,9 +12,7 @@ info:
 
     Ansible collections (the modern packaging format that bundles roles,
 
-    modules, plugins, and playbooks).
-
-    '
+    modules, plugins, and playbooks).'
   contact:
     name: Ansible Galaxy
     url: https://galaxy.ansible.com
