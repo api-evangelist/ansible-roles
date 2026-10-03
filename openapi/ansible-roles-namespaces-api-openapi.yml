@@ -45,6 +45,20 @@ paths:
         '200':
           description: A namespace.
 components:
+  responses:
+    PagedList:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagedList'
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
   schemas:
     PagedList:
       type: object
@@ -68,20 +82,6 @@ components:
           items:
             type: object
             additionalProperties: true
-  responses:
-    PagedList:
-      description: A paginated list response.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PagedList'
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
   securitySchemes:
     TokenAuth:
       type: apiKey

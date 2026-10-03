@@ -112,29 +112,21 @@ paths:
         '202':
           description: Download tracked.
 components:
-  schemas:
+  responses:
     PagedList:
-      type: object
-      properties:
-        count:
-          type: integer
-        next:
-          type: string
-          nullable: true
-        next_link:
-          type: string
-          nullable: true
-        previous:
-          type: string
-          nullable: true
-        previous_link:
-          type: string
-          nullable: true
-        results:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagedList'
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  schemas:
     Role:
       type: object
       properties:
@@ -174,20 +166,28 @@ components:
         summary_fields:
           type: object
           additionalProperties: true
-  responses:
     PagedList:
-      description: A paginated list response.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PagedList'
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        next_link:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        previous_link:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
   securitySchemes:
     TokenAuth:
       type: apiKey
