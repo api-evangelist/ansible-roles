@@ -75,22 +75,15 @@ paths:
         '200':
           description: A specific version of a collection.
 components:
-  responses:
-    PagedList:
-      description: A paginated list response.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PagedList'
   parameters:
-    Name:
-      name: name
+    Namespace:
+      name: namespace
       in: path
       required: true
       schema:
         type: string
-    Namespace:
-      name: namespace
+    Name:
+      name: name
       in: path
       required: true
       schema:
@@ -118,6 +111,13 @@ components:
           items:
             type: object
             additionalProperties: true
+  responses:
+    PagedList:
+      description: A paginated list response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PagedList'
   securitySchemes:
     TokenAuth:
       type: apiKey
