@@ -1,4 +1,4 @@
-# Ansible Roles (ansible-roles)
+# Ansible Roles
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,110 +66,173 @@
 
 A curated collection of APIs and resources for discovering, managing, and consuming Ansible roles — the primary unit of reusable automation content in the Ansible ecosystem. Covers the Galaxy and Automation Hub APIs for role discovery, download, and publishing, as well as the Ansible Collections framework that has extended the role model into full-featured content packages.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ansible-roles/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ansible-roles/refs/heads/main/apis.yml)
+**Areas:** Ansible · Automation · Collection · Configuration Management · DevOps · Infrastructure as Code · Roles
 
-## Tags
+## Ansible Roles on APIs.io
 
-- Ansible
-- Automation
-- Collections
-- Configuration Management
-- DevOps
-- Infrastructure As Code
-- Roles
+Everything profiled for Ansible Roles is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ansible-roles/](https://apis.io/providers/ansible-roles/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (10)
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-04-19
+- [Ansible Galaxy Roles API](https://apis.io/apis/ansible-roles/ansible-galaxy-roles-api/) — The Ansible Galaxy v1 and v2 REST API enables searching, discovering, and downloading Ansible roles contributed by the community. Supports searching roles…
+- [Ansible Galaxy Collections API](https://apis.io/apis/ansible-roles/ansible-galaxy-collections-api/) — The Ansible Galaxy v3 API provides enhanced support for Ansible collections — the modern packaging format that bundles roles, modules, plugins, and…
+- [Ansible Automation Hub Roles API](https://apis.io/apis/ansible-roles/ansible-automation-hub-roles-api/) — The Red Hat Ansible Automation Hub provides certified and partner-validated Ansible collections and roles for enterprise use. The API enables access to Red…
+- [Ansible Roles Ansible Galaxy Roles & Collections API](https://apis.io/apis/ansible-roles/ansible-roles-ansible-galaxy-roles-collections-api-api/) — The Ansible Galaxy Roles & Collections API API from Ansible Roles — 2 operation(s) for ansible galaxy roles & collections api.
+- [Ansible Roles Collections API](https://apis.io/apis/ansible-roles/ansible-roles-collections-api/) — Modern v3 collections (Galaxy NG / Pulp).
+- [Ansible Roles Imports API](https://apis.io/apis/ansible-roles/ansible-roles-imports-api/) — Track role import job status.
+- [Ansible Roles Namespaces API](https://apis.io/apis/ansible-roles/ansible-roles-namespaces-api/) — Legacy v1 namespaces (mapped from GitHub orgs/users).
+- [Ansible Roles API](https://apis.io/apis/ansible-roles/ansible-roles-roles-api/) — Legacy v1 community roles API.
+- [Ansible Roles Sync API](https://apis.io/apis/ansible-roles/ansible-roles-sync-api/) — Trigger legacy content sync.
+- [Ansible Roles Users API](https://apis.io/apis/ansible-roles/ansible-roles-users-api/) — Legacy v1 users API.
 
-## APIs
+### Published properties
 
-### Ansible Galaxy Roles API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The Ansible Galaxy v1 and v2 REST API enables searching, discovering, and downloading Ansible roles contributed by the community. Supports searching roles by keyword, author, or tag; retrieving role details and version history; and downloading specific role versions for use in playbooks.
+#### Agentic access (1)
 
-- **Human URL:** [https://galaxy.ansible.com](https://galaxy.ansible.com)
-- **Base URL:** `https://galaxy.ansible.com/api/v1/`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Ansible Roles Agentic Access](https://apis.io/agentic-access/ansible-roles/ansible-roles-agentic-access/)
 
-- Ansible
-- Community
-- Galaxy
-- Roles
+#### JSON Schema (2)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://galaxy.ansible.com/docs/)
-- [API Reference](https://galaxy.ansible.com/api/v1/)
-- [Getting Started](https://docs.ansible.com/ansible/latest/galaxy/user_guide.html)
-- [Postman Collection](collections/ansible-roles.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ansible-roles.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Collection](https://apis.io/schemas/ansible-roles/ansible-roles-collection/)
+- [Role](https://apis.io/schemas/ansible-roles/ansible-roles-role/)
 
-### Ansible Galaxy Collections API
+#### JSON Structure (2)
 
-The Ansible Galaxy v3 API provides enhanced support for Ansible collections — the modern packaging format that bundles roles, modules, plugins, and documentation together. Supports listing, searching, downloading, and versioning of published collections from the community namespace on Galaxy.
+Data models expressed in JSON Structure.
 
-- **Human URL:** [https://galaxy.ansible.com](https://galaxy.ansible.com)
-- **Base URL:** `https://galaxy.ansible.com/api/v3/`
+- [Ansible Roles Collection Structure](https://apis.io/json-structure/ansible-roles/ansible-roles-collection-structure/)
+- [Ansible Roles Role Structure](https://apis.io/json-structure/ansible-roles/ansible-roles-role-structure/)
 
-#### Tags
+#### JSON-LD (1)
 
-- Ansible
-- Collections
-- Community
-- Galaxy
+Linked-data contexts for the provider's vocabulary.
 
-#### Properties
+- [Ansible Roles Context](https://apis.io/jsonld/ansible-roles/ansible-roles-context/)
 
-- [Documentation](https://galaxy.ansible.com/docs/)
-- [API Reference](https://galaxy.ansible.com/api/v3/)
-- [Getting Started](https://docs.ansible.com/ansible/latest/collections/index.html)
-- [Postman Collection](collections/ansible-roles.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ansible-roles.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Vocabulary (1)
 
-### Ansible Automation Hub Roles API
+The provider's domain terms, defined.
 
-The Red Hat Ansible Automation Hub provides certified and partner-validated Ansible collections and roles for enterprise use. The API enables access to Red Hat-certified content with SLA-backed quality, partner-certified content, and community content synced from Galaxy in supported namespaces.
+- [Ansible Roles Vocabulary](https://apis.io/vocabularies/ansible-roles/ansible-roles-vocabulary/)
 
-- **Human URL:** [https://console.redhat.com/ansible/automation-hub](https://console.redhat.com/ansible/automation-hub)
-- **Base URL:** `https://console.redhat.com/api/automation-hub/v3/`
+#### Examples (2)
 
-#### Tags
+Example requests and responses.
 
-- Ansible
-- Certified Content
-- Collections
-- Enterprise
-- Red Hat
-- Roles
+- [Ansible Roles Collection Example](https://apis.io/examples/ansible-roles/ansible-roles-collection-example/)
+- [Ansible Roles Role Example](https://apis.io/examples/ansible-roles/ansible-roles-role-example/)
 
-#### Properties
+#### Collections (8)
 
-- [Documentation](https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/)
-- [API Reference](https://console.redhat.com/api/automation-hub/v3/)
-- [Portal](https://console.redhat.com/ansible/automation-hub)
-- [Postman Collection](collections/ansible-roles.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ansible-roles.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Ansible Galaxy Roles & Collections API](https://apis.io/collections/ansible-roles/open-ansible-roles/)
+- [Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API API](https://apis.io/collections/ansible-roles/open-ansible-roles-ansible-galaxy-roles-collections-api-api/)
+- [Ansible Galaxy Roles & Ansible Galaxy Roles & API Collections API](https://apis.io/collections/ansible-roles/open-ansible-roles-collections-api/)
+- [Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Imports API](https://apis.io/collections/ansible-roles/open-ansible-roles-imports-api/)
+- [Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Namespaces API](https://apis.io/collections/ansible-roles/open-ansible-roles-namespaces-api/)
+- [Ansible Galaxy & Collections Ansible Galaxy & Collections API Roles API](https://apis.io/collections/ansible-roles/open-ansible-roles-roles-api/)
+- [Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Sync API](https://apis.io/collections/ansible-roles/open-ansible-roles-sync-api/)
+- [Ansible Galaxy Roles & Collections Ansible Galaxy Roles & Collections API Users API](https://apis.io/collections/ansible-roles/open-ansible-roles-users-api/)
 
-- [Getting Started](https://docs.ansible.com/ansible/latest/galaxy/user_guide.html)
-- [Authentication](https://galaxy.ansible.com/docs/authentication/)
-- [Terms of Service](https://www.redhat.com/en/about/terms-use)
-- [Privacy Policy](https://www.redhat.com/en/about/privacy-policy)
-- [GitHub Repository](https://github.com/ansible/galaxy)
-- [GitHub Organization](https://github.com/ansible)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/ansible-roles/refs/heads/main/json-schema/ansible-roles-role-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/ansible-roles/refs/heads/main/json-schema/ansible-roles-collection-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [Vocabulary](https://raw.githubusercontent.com/api-evangelist/ansible-roles/refs/heads/main/vocabulary/ansible-roles-vocabulary.yaml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+#### Governance rules (1)
 
-## Maintainers
+Spectral rulesets for the provider's contracts.
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
-**URL:** https://apievangelist.com
+- [Ansible Roles — jsonschema rules](https://apis.io/rules/ansible-roles/ansible-roles-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ansible Roles Authentication](https://apis.io/security/ansible-roles/ansible-roles-authentication/)
+- [Ansible Roles Domain Security](https://apis.io/security/ansible-roles/ansible-roles-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Ansible Roles Plans Pricing](https://apis.io/plans/ansible-roles/ansible-roles-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ansible Roles Rate Limits](https://apis.io/rate-limits/ansible-roles/ansible-roles-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Ansible Roles Finops](https://apis.io/finops/ansible-roles/ansible-roles-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://ansible.com)
+- [Getting started](https://docs.ansible.com/ansible/latest/galaxy/user_guide.html)
+- [Terms of service](https://www.redhat.com/en/about/terms-use)
+- [Privacy policy](https://www.redhat.com/en/about/privacy-policy)
+- [GitHub](https://github.com/ansible)
+
+## API Evangelist rating
+
+**Kin Score 41.3** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 49.4 |
+| Contract governance | 23.5 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 34.5 |
+| Access clarity | 28.9 |
+
+**Agent readiness 22.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ansible-roles/](https://apis.io/providers/ansible-roles/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ansible Roles: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ansible-roles/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
